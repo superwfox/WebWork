@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:#f6f7f9;
+    scroll-behavior:smooth;
+}
+
+.topbar{
+    padding:16px 20px;
+    background:black;
+    border-bottom:1px solid #e7e9ee;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:220px 1fr 260px;
+    gap:12px;
+    padding:12px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e7e9ee;
+    border-radius:12px;
+    padding:12px;
+}
+
+.toc{
+    margin:0;
+    padding-left:18px;
+}
+
+.toc a{
+    text-decoration:none;
+}
+.toc a:hover{
+    text-decoration:underline;
+}
+
+/* 防止锚点跳转时标题被顶部 sticky 栏挡住 */
+.anchor{
+    scroll-margin-top:72px;
+}
+
+@media (max-width:800px){
+    .container{ grid-template-columns:1fr; }
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>三列式页面：Web 基础 + JD 分析</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header class="topbar">
+  <strong>学习记录</strong>：三列式网页（左目录 / 中内容 / 右侧速览）
+</header>
+
+<main class="container">
+  <!-- 左侧：目录（点击跳中间章节） -->
+  <aside class="card">
+    <h3>目录</h3>
+    <ol class="toc">
+      <li><a href="#ch0">本页用途</a></li>
+      <li><a href="#ch1">Dreamweaver 是什么</a></li>
+      <li><a href="#ch2">三列式网页是什么</a></li>
+      <li><a href="#ch3">Java 如何发送 HTML/CSS</a></li>
+      <li><a href="#ch4">现代网站通常怎么做</a></li>
+      <li><a href="#jd">JD 分析（粘贴区）</a></li>
+    </ol>
+
+    <!-- 扩展（不展开）：
+      - 自动从中间栏 h2/h3 生成目录
+      - 当前章节高亮（IntersectionObserver）
+    -->
+  </aside>
+
+  <!-- 中间：正文内容 -->
+  <section class="card content">
+    <h2 id="ch0" class="anchor">本页用途</h2>
+    <p>这是一页「三列式」示例：左侧是目录，点击后会跳转到中间对应章节；右侧放速览和行动清单。</p>
+    <p>你后面只需要改中间的内容文字，就能持续迭代成自己的学习笔记/文档页。</p>
+
+    <h2 id="ch1" class="anchor">Dreamweaver 是什么</h2>
+    <p>Dreamweaver（DW）是 Adobe 的网页编辑工具，既能可视化排版，也能写 HTML/CSS/JS 代码。</p>
+    <ul>
+      <li>适合：传统“切页面/企业站”工作流、快速拼页面。</li>
+      <li>现代开发更常用：VS Code + 浏览器预览 + 构建工具（Vite/Next）。</li>
+    </ul>
+
+    <h2 id="ch2" class="anchor">三列式网页是什么</h2>
+    <p>三列式 = 左侧栏（导航/目录）+ 中间主内容 + 右侧栏（推荐/工具/速览）。</p>
+    <ul>
+      <li>优点：信息分区清晰，文档站/资讯站常见。</li>
+      <li>移动端：通常折叠侧栏，变单列或抽屉菜单。</li>
+    </ul>
+
+    <h2 id="ch3" class="anchor">Java 如何发送 HTML/CSS</h2>
+    <p>你的 Java 小服务器本质只做一件事：把文件内容按 URL 返回给浏览器。</p>
+    <ol>
+      <li>用户访问 <code>/</code> → 返回 <code>index.html</code></li>
+      <li>HTML 里引用 <code>/style.css</code> → 浏览器自动再请求一次 → 返回 <code>style.css</code></li>
+    </ol>
+    <p>关键点：</p>
+    <ul>
+      <li><code>index.html</code> 里必须写：<code>&lt;link rel="stylesheet" href="/style.css"&gt;</code></li>
+      <li>Java 端必须对 <code>/style.css</code> 做 <code>createContext</code> 并设置 <code>Content-Type: text/css</code></li>
+    </ul>
+
+    <h2 id="ch4" class="anchor">现代网站通常怎么做</h2>
+    <p>现代做法更强调：内容来源、组件化、路由、性能与维护成本。</p>
+    <ul>
+      <li>文档/教程类：Markdown/MDX + 自动 TOC + SSG（VitePress/Docusaurus/Next）</li>
+      <li>业务系统：React/Vue + API + 组件库（AntD/Element）</li>
+      <li>后端：更多提供 API；页面渲染交给前端或静态生成</li>
+    </ul>
+
+    <h2 id="jd" class="anchor">JD 分析（粘贴区）</h2>
+    <p>把你那份 JD 分析要点直接贴到下面几个小节里（我给了结构），页面就立刻变成“真实可用”的复盘文档。</p>
+
+    <h3 id="jd-req" class="anchor">岗位要求拆解</h3>
+    <ul>
+      <li>（示例）必须项：……</li>
+      <li>（示例）加分项：……</li>
+      <li>（示例）软技能：沟通 / 推进 / 协作……</li>
+    </ul>
+    <!-- 在这里粘贴你自己的 JD 要点 -->
+
+    <h3 id="jd-gap" class="anchor">我与 JD 的差距</h3>
+    <ol>
+      <li>差距 1：……（证据/现状）</li>
+      <li>差距 2：……</li>
+      <li>差距 3：……</li>
+    </ol>
+
+    <h3 id="jd-plan" class="anchor">90 天补齐计划（可执行）</h3>
+    <ul>
+      <li>第 1-2 周：补基础（HTML/CSS/JS + 小项目）</li>
+      <li>第 3-6 周：做可展示作品（含路由/组件/部署）</li>
+      <li>第 7-12 周：针对 JD 做专项（性能/工程化/测试/协作）</li>
+    </ul>
+
+    <!-- 扩展（不展开）：
+      - 把 JD 内容改成 markdown 渲染
+      - 加 app.js 自动生成目录、滚动高亮
+    -->
+  </section>
+
+  <!-- 右侧：速览/行动 -->
+  <aside class="card">
+    <h3>速览</h3>
+    <ul>
+      <li>左侧：目录（锚点）</li>
+      <li>中间：章节内容</li>
+      <li>右侧：总结 & TODO</li>
+    </ul>
+
+    <h3>TODO</h3>
+    <ol>
+      <li>把“JD 分析要点”粘进页面</li>
+      <li>把章节内容扩成真实案例</li>
+      <li>（可选）加 app.js：目录自动生成/高亮</li>
+    </ol>
+  </aside>
+</main>
+</body>
+</html>
